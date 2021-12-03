@@ -1,3 +1,4 @@
+<!-- Cerrar sesion -->
 <?php include("db.php");
     session_start();
     unset($_SESSION['username']);

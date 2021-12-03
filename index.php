@@ -82,9 +82,10 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet">
 </head>
 <body id="page-top">
+    <!-- Barra lateral de navegacion -->
     <div id="wrapper">
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: black;">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
@@ -115,6 +116,7 @@
                 <img src="img/merza.png" alt="" style="width: 200px">
             </div>
         </ul>
+        <!-- Modal y boton del navbar para salir -->
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow" style="background-color: black;">
@@ -162,6 +164,7 @@
                         </li>
                     </ul>
                 </nav>
+                <!-- Ganacias del mes -->
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-3 col-md-6 mb-4">
@@ -188,6 +191,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Ganancias anuales -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
@@ -212,6 +216,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Ganacias esperadas -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-info shadow h-100 py-2">
                                 <div class="card-body">
@@ -231,6 +236,7 @@
                                                         <?php } ?>
                                                     </div>
                                                 </div>
+                                                <!-- aqui llenamos la grafica del porcetanje de ganacias esperadas -->
                                                 <div class="col">
                                                         <?php
                                                             include("db.php");
@@ -253,6 +259,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Parte para mandar mensaje a merza Villa union -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
@@ -270,6 +277,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- aqui la grafica de ganancias -->
                     <div class="row">
                         <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
@@ -281,14 +289,6 @@
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -308,16 +308,9 @@
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
                                     </div>
                                 </div>
+                                <!-- Categorias mas vendidas -->
                                 <div class="card-body">
                                     <div class="chart-pie pt-4 pb-2">
                                         <canvas id="myPieChart"></canvas>
@@ -331,23 +324,14 @@
                                             <span class="mr-2">
                                             <i class="fas fa-circle text-primary"></i> <?php echo $row['tipo_categoria'] ?>
                                             </span>
-        
                                         <?php } ?>
-                                        <!-- <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Ropa invierno
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> bebidas alcohólicas
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Refrescos
-                                        </span> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
             </div>
+            <!-- Footer de la pagina -->
             <footer class="sticky-footer text-white mt-5" style="background-color:#000">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -360,6 +344,7 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+    <!-- Modal llamado arriba con jquery para salir -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -381,6 +366,8 @@
     <script>
         ler arr[]; 
     </script>
+    
+    <!-- Obtenemos los datos del mysql con php y aqui lo mandamos a javascript para crear las graficas -->
     <script>
         let enero = <?php echo $enero;?>;
         let febrero = <?php echo $febrero;?>; 
@@ -393,15 +380,15 @@
         let septiembre = <?php echo $septiembre;?>;
         let octubre = <?php echo $octubre;?>; 
         let noviembre = <?php echo $noviembre;?>; 
-        let diciembre = <?php echo $diciembre;?>; 
-                        
+        let diciembre = <?php echo $diciembre;?>;         
     </script>
 
+    <!-- importaciond de librerias y scripts -->
     <script src="librerias/jquery/jquery.js"></script>
     <script src="librerias/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="librerias/chart.js/Chart.js"></script>
     <script src="js/graficas/mas-vendido.js"></script>
-    <script src="js/graficas/chart-pie-demo.js"></script>
+    <script src="js/graficas/categorias.js"></script>
     <script src="js/graficas/chart-bar-demo.js"></script>
 </body>
 

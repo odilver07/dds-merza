@@ -10,7 +10,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,86 +19,55 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-    <link href="css/sb-admin-2.css" rel="stylesheet">
-
+    <link href="css/estilos.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
-
-    <!-- Page Wrapper -->
+    <!-- Barra de navegacion lateral -->
     <div id="wrapper">
-
-        <!-- Sidebar -->
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: black;">
-
-            <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15 text-white">
                     Grupo MERZA
                 </div>
             </a>
-
-            <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Ganancias</span></a>
             </li>
-
-            <!-- Divider -->
             <hr class="sidebar-divider">
-
-            <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="tables.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Inventario</span></a>
             </li>
             <hr class="sidebar-divider">
-
             <li class="nav-item active">
                 <a class="nav-link" href="mas-vendido.php">
                     <i class="fa fa-bolt" aria-hidden="true"></i>
                     <span>Mas vendidos</span></a>
             </li>
-
-            <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-
             <div class="text-center d-none d-md-inline">
                 <img src="img/merza.png" alt="" style="width: 200px">
             </div>
         </ul>
-        <!-- End of Sidebar -->
 
-        <!-- Content Wrapper -->
+        <!-- Barra de navegacion para salir del sistema junto a su modal de pregunta -->
         <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
             <div id="content">
-
-                <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow" style="background-color: black;">
-
-                    <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
-                    </button>
-
-
-                    <!-- Topbar Navbar -->
+                    </button>>
                     <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
-                            <!-- Dropdown - Messages -->
                             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                 aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
@@ -116,10 +84,7 @@
                                 </form>
                             </div>
                         </li>
-
                         <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -127,10 +92,8 @@
                                 <img class="img-profile rounded-circle"
                                     src="img/merza-conejo-ADMIN.png">
                             </a>
-                            <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                            
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -142,17 +105,12 @@
                     </ul>
 
                 </nav>
-                <!-- End of Topbar -->
+                
 
-                <!-- Begin Page Content -->
+                <!-- Productos menos vendidos -->
                 <div class="container-fluid">
-
                     <div class="row">
-
-                        <!-- Content Column -->
                         <div class="col-lg-6 mb-4">
-
-                            <!-- Project Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
                                     <h4 class="m-0 font-weight-bold text-primary">Producto menos vendidos</h4></h6>
@@ -170,7 +128,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- obtenemos los productos de la base de datos -->
+                                        <!-- Obtenemos los productos menos vendidos y lso iteramos en la tabla -->
                                         <?php
                                             include("db.php");
                                             $query = "select p.nombre_producto, p.marca, p.precio, p.cantidad as disponibles, sum(v.cantidad) as vendidos from ventas as v inner join producto as p on v.id_producto != p.id where v.fecha between '2021-12-01' and '2022-01-01' group by p.nombre_producto order by vendidos asc limit 6";
@@ -190,9 +148,8 @@
                                 </div>
                             </div>
 
-                            <!-- Color System -->
+                            <!-- Informacion sobre los valores de Merza -->
                             <div class="row">
-                                <!-- Illustrations -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">Merza</h6>
@@ -208,18 +165,19 @@
                                     de nuestros canales de distribución, logrando así, creación de valor a la organización, 
                                     proveedores y colaboradores.
                                     </p>
+                                    <!-- Este link rederige a la pagina oficial de merza -->
                                     <a target="_blank" rel="nofollow" 
                                     href="http://www.grupomerza.com/grupo-merza/mostrar.aspx?pagina=3">Historia de grupo Merza 
                                     &rarr;</a>
                                 </div>
                             </div>
                             </div>
-
                         </div>
 
+
+                        <!-- Productos mas  -->
                         <div class="col-lg-6 mb-4">
                             <div class="col-12">
-
                                 <div class="card shadow mb-4">
                                     <div class="card-header py-3">
                                         <h4 class="m-0 font-weight-bold text-primary">Productos mas vendidos</h4>
@@ -246,7 +204,7 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <!-- obtenemos los productos de la base de datos -->
+                                        <!-- obtenemos los productos mas vendidos de la base de datos -->
                                         <?php
                                             include("db.php");
                                             $query = "select p.nombre_producto, p.marca, p.precio, p.cantidad as disponibles, sum(v.cantidad) as vendidos from ventas as v inner join producto as p on v.id_producto != p.id where v.fecha between '2021-12-01' and '2022-01-01' group by p.nombre_producto order by vendidos desc limit 6";

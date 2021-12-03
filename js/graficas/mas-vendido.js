@@ -2,9 +2,9 @@ $(document).ready(function(){
   Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
   Chart.defaults.global.defaultFontColor = '#858796';
   
+  // busqueda de los productos mediante funciones regulares, 
+  // se puede sustituir por filter pero esta funcion no es soportada por muchos navedares
   function number_format(number, decimals, dec_point, thousands_sep) {
-    // *     example: number_format(1234.56, 2, ',', ' ');
-    // *     return: '1 234,56'
     number = (number + '').replace(',', '').replace(' ', '');
     var n = !isFinite(+number) ? 0 : +number,
       prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
@@ -15,7 +15,6 @@ $(document).ready(function(){
         var k = Math.pow(10, prec);
         return '' + Math.round(n * k) / k;
       };
-    // Fix for IE parseFloat(0.55).toFixed(0) = 0;
     s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
     if (s[0].length > 3) {
       s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
@@ -27,7 +26,7 @@ $(document).ready(function(){
     return s.join(dec);
   }
   
-  // Area Chart Example
+  // Generacion de la grafica
   var ctx = document.getElementById("myAreaChart");
   var myLineChart = new Chart(ctx, {
     type: 'line',
@@ -46,9 +45,14 @@ $(document).ready(function(){
         pointHoverBorderColor: "rgba(78, 115, 223, 1)",
         pointHitRadius: 10,
         pointBorderWidth: 2,
+        // Importamos los datos obtenidos de la base de datos del archivo index.php
+        // y los integramos a la grafica
         data: [enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre],
       }],
     },
+    // propiedades visuales de la grafica
+    // provistas por la libreria Chart.js descargada
+    // y entegrada en la carpeta 'Librerias'
     options: {
       maintainAspectRatio: false,
       layout: {

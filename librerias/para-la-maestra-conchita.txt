@@ -1,0 +1,14 @@
+estas son las librerias que utilizamos, los comentarios dentro de estas librerias
+estan en ingles no quisimos tocar nada porque sentimos que es violar los derechos de autor
+estas librerias son de acceso libre y nos ayudan a resolver los problemas
+de incompatibilidad que puede haber por parte de algunas funciones de javascript
+con algunos navegadores que no se actualizan constantemente.
+
+chart.js es una libreria que nos ayuda a crear graficas dinamicas
+https://www.chartjs.org/
+
+Para resolver algunos problemas de incompatibilidad usamos jquery
+https://jquery.com/
+
+boostrap es una libreria para dar estilos a algunos componentes
+https://getbootstrap.com/docs/5.1/getting-started/introduction/

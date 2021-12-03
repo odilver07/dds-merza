@@ -19,7 +19,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet">
     <link href="librerias/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
 </head>
@@ -203,7 +203,7 @@
     <script src="librerias/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="librerias/datatables/jquery.dataTables.js"></script>
     <script src="librerias/datatables/dataTables.bootstrap4.js"></script>
-    <script src="js/graficas/datatables-demo.js"></script>
+    <script src="js/graficas/agotarse.js"></script>
 </body>
 
 </html>
