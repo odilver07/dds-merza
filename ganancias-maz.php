@@ -1,6 +1,6 @@
 <!-- Validamos que el usuario haya iniciado sesion -->
 <?php
-    include("db.php");
+    include("db-mazatlan.php");
     session_start();
     $username = $_SESSION['username'];
     if(!$username){
@@ -94,13 +94,13 @@
                 </div>
             </a>
             <hr class="sidebar-divider my-0">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Ganancias Villa Union</span></a>
             </li>
             <hr class="sidebar-divider my-0">
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="ganancias-maz.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Ganancias Mazatlan</span></a>
@@ -188,7 +188,7 @@
                                                 Ganancias (último mes)</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                             <?php
-                                                            include("db.php");
+                                                            include("db-mazatlan.php");
                                                             $query = "select sum(cantidad * precio - (cantidad * precio *descuento)) as total from ventas where fecha between '2021-12-01' and '2022-01-01'";
                                                             $total = mysqli_query($conn,$query);
                                                             while($row = mysqli_fetch_array($total)){ ?>
@@ -213,7 +213,7 @@
                                                 Ganancias (Anual)</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                         <?php
-                                                            include("db.php");
+                                                            include("db-mazatlan.php");
                                                             $query = "select sum(cantidad * precio - (cantidad * precio *descuento)) as total from ventas";
                                                             $total = mysqli_query($conn,$query);
                                                             while($row = mysqli_fetch_array($total)){ ?>
@@ -240,8 +240,8 @@
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
                                                         <?php
-                                                            include("db.php");
-                                                            $query = "select (sum(cantidad * precio - (cantidad * precio *descuento)) / 100000)*100 as ganancias from ventas where fecha between '2021-12-01' and '2022-01-01'";
+                                                            include("db-mazatlan.php");
+                                                            $query = "select (sum(cantidad * precio - (cantidad * precio *descuento)) / 2500000)*100 as ganancias from ventas where fecha between '2021-12-01' and '2022-01-01'";
                                                             $total = mysqli_query($conn,$query);
                                                             while($row = mysqli_fetch_array($total)){ ?>
                                                             <p> <?php echo $row['ganancias'] . "%" ?></p>        
@@ -252,7 +252,7 @@
                                                 <div class="col">
                                                         <?php
                                                             include("db.php");
-                                                            $query = "select (sum(cantidad * precio - (cantidad * precio *descuento)) / 100000)*100 as ganancias from ventas where fecha between '2021-12-01' and '2022-01-01'";
+                                                            $query = "select (sum(cantidad * precio - (cantidad * precio *descuento)) / 2500000)*100 as ganancias from ventas where fecha between '2021-12-01' and '2022-01-01'";
                                                             $total = mysqli_query($conn,$query);
                                                             while($row = mysqli_fetch_array($total)){ ?>
                                                             <div class="progress progress-sm mr-2">
@@ -331,7 +331,7 @@
                                     </div>
                                     <div class="mt-4 text-center small">
                                         <?php
-                                            include("db.php");
+                                            include("db-mazatlan.php");
                                             $query = "select  distinct tipo_categoria from ventas as v inner join producto as p on v.id_producto = p.id inner join categoria_producto as c on c.id = p.idcategoria_producto";
                                             $p = mysqli_query($conn,$query);
                                             while($row = mysqli_fetch_array($p)){ ?>

@@ -46,13 +46,13 @@
                     <span>Ganancias Mazatlan</span></a>
             </li>
             <hr class="sidebar-divider">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="tables.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Inventario Villa Union</span></a>
             </li>
             <hr class="sidebar-divider">
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="inventario-maz.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Inventario Mazatlan</span></a>
@@ -126,7 +126,7 @@
                 <div class="container-fluid">
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h4 class="m-0 font-weight-bold text-primary">Productos por agotarse en Merza Villa Union</h4>
+                            <h4 class="m-0 font-weight-bold text-primary">Inventario de Merza Mazatlan</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -154,7 +154,7 @@
                                     <tbody>
                                         <!-- obtenemos los productos de la base de datos -->
                                         <?php
-                                            include("db.php");
+                                            include("db-mazatlan.php");
                                             $query = "select p.nombre_producto, c.tipo_categoria, p.marca, p.cantidad, p.fecha_entrega, p.precio from producto as p inner join categoria_producto as c on p.idcategoria_producto = c.id;";
                                             $p = mysqli_query($conn,$query);
                                             while($row = mysqli_fetch_array($p)){ ?>

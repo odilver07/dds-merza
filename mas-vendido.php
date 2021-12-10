@@ -35,19 +35,31 @@
             <li class="nav-item">
                 <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Ganancias</span></a>
+                    <span>Ganancias Villa Union</span></a>
+            </li>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item">
+                <a class="nav-link" href="ganancias-maz.php">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Ganancias Mazatlan</span></a>
             </li>
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="tables.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Inventario</span></a>
+                    <span>Inventario Villa Union</span></a>
             </li>
             <hr class="sidebar-divider">
+            <li class="nav-item">
+                <a class="nav-link" href="inventario-maz.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Inventario Mazatlan</span></a>
+            </li>
+            <hr class="sidebar-divider d-none d-md-block">
             <li class="nav-item active">
                 <a class="nav-link" href="mas-vendido.php">
                     <i class="fa fa-bolt" aria-hidden="true"></i>
-                    <span>Mas vendidos</span></a>
+                    <span>Mas vendidos Villa Union</span></a>
             </li>
             <hr class="sidebar-divider d-none d-md-block">
             <div class="text-center d-none d-md-inline">
@@ -117,6 +129,7 @@
                                 </div>
                                 <div class="card-body">
                                 <div class="table-responsive">
+                                    <!-- Inicio de la tabla de mas vendidos -->
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>

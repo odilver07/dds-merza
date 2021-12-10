@@ -1,9 +1,9 @@
-<!-- Conexion a la base de datos de merza villa union-->
+<!-- Conexion a la base de datos merza mazatlan-->
 <?php
 $conn = mysqli_connect(
     'localhost',
     'root',
     'root',
-    'dds'
+    'dds_maza'
 );
 ?>
